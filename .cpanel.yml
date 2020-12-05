@@ -1,0 +1,5 @@
+---
+deployment:
+    tasks:
+        - export DEPLOYPATH=/home/batfiche/public_html/fetask.batfich.eu
+        - /bin/cp -r images $DEPLOYPATH
