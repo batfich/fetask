@@ -43,8 +43,8 @@ $(document).ready(function () {
 		document.getElementById("weatherMain").innerHTML = data.weather[0].main;
 		document.getElementById("weatherDescription").innerHTML = data.weather[0].description;
 		document.getElementById("temp").innerHTML = Math.round(data.main.temp) + " °C";
-		document.getElementById("tempMin").innerHTML = Math.round(data.main.temp_min) + " °C";
-		document.getElementById("tempMax").innerHTML = Math.round(data.main.temp_max) + " °C";
-		document.getElementById("humidity").innerHTML = Math.round(data.main.humidity) + " °C";
+		document.getElementById("tempMin").innerHTML = Math.round(data.main.temp_min) + " °C Lo";
+		document.getElementById("tempMax").innerHTML = Math.round(data.main.temp_max) + " °C Max";
+		document.getElementById("humidity").innerHTML = data.main.humidity + " %";
 	}
 });
