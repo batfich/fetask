@@ -32,7 +32,7 @@ $(document).ready(function () {
 	function showWeader(data) {
 		$.ajax({
 			type: "GET",
-			url: "http://api.openweathermap.org/data/2.5/weather?q=" + data.capital + "," + data.alpha2Code + "&units=metric&APPID=c3e00c8860695fd6096fe32896042eda",
+			url: "https://api.openweathermap.org/data/2.5/weather?q=" + data.capital + "," + data.alpha2Code + "&units=metric&APPID=c3e00c8860695fd6096fe32896042eda",
 			success: function (response) {
 				renderWeader(response);
 			},
