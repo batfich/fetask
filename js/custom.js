@@ -56,17 +56,17 @@ $(document).ready(function () {
 		document.getElementById("weatherMain").innerHTML = data.weather[0].main;
 		document.getElementById("weatherDescription").innerHTML = data.weather[0].description;
 		document.getElementById("temp").innerHTML = Math.round(data.main.temp) + "° <span>C</span>";
-		document.getElementById("tempMin").innerHTML = Math.round(data.main.temp_min) + " <span>°C Lo</span>";
-		document.getElementById("tempMax").innerHTML = Math.round(data.main.temp_max) + " <span>°C Max</span>";
-		document.getElementById("humidity").innerHTML = data.main.humidity + " <span>%</span>";
+		document.getElementById("tempMin").innerHTML = Math.round(data.main.temp_min) + "° <span>C Lo</span>";
+		document.getElementById("tempMax").innerHTML = Math.round(data.main.temp_max) + "° <span>C Max</span>";
+		document.getElementById("humidity").innerHTML = data.main.humidity + "% <span>Humidity</span>";
 	}
 
 	function currencies(data) {
 		// $("#result").val("Loading...");
 		document.getElementById("amount-label").innerHTML = data.currencies[0].code;
 
-		var from = "USD";
-		var to = data.currencies[0].code;
+		var from = data.currencies[0].code;
+		var to = "USD";
 
 		$.ajax({
 			type: "GET",
@@ -81,11 +81,11 @@ $(document).ready(function () {
 	}
 
 	function renderCurrencies(data) {
-		amount = document.getElementById("amount").value;
+		result = document.getElementById("result").value;
 		var exchangeRate = JSON.stringify(data).replace(/[^0-9\.]/g, "");
-		var result = amount * exchangeRate;
+		var amount = result * exchangeRate;
 
-		$("#result").val(parseFloat(result).toFixed(2));
+		$("#amount").val(parseFloat(amount).toFixed(2));
 
 		$("#amount").keyup(function () {
 			amount = document.getElementById("amount").value;
