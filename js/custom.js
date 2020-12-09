@@ -27,14 +27,16 @@ $(document).ready(function () {
 
 	function countryInfo(data) {
 		document.getElementById("name").innerHTML = data.name;
-		document.getElementById("capital").innerHTML = data.capital;
-		document.getElementById("region").innerHTML = data.region;
+		document.getElementById("capital").innerHTML = "<span>Capital:</span> " + data.capital;
+		document.getElementById("region").innerHTML = "<span>Region:</span> " + data.region;
 		// document.getElementById("timezones").innerHTML = data.timezones;
 		// document.getElementById("alpha2Code").innerHTML = data.alpha2Code;
 		// document.getElementById("currencies").innerHTML = data.currencies[0].code;
 		data.timezones;
 		data.alpha2Code;
 		data.currencies[0].code;
+		$(".header").animate({ height: "200px" }, "800");
+		$(".results").fadeIn(1000);
 	}
 
 	function showWeader(data) {
@@ -53,7 +55,7 @@ $(document).ready(function () {
 	function renderWeader(data) {
 		document.getElementById("weatherMain").innerHTML = data.weather[0].main;
 		document.getElementById("weatherDescription").innerHTML = data.weather[0].description;
-		document.getElementById("temp").innerHTML = Math.round(data.main.temp) + " <span>°C</span>";
+		document.getElementById("temp").innerHTML = Math.round(data.main.temp) + "° <span>C</span>";
 		document.getElementById("tempMin").innerHTML = Math.round(data.main.temp_min) + " <span>°C Lo</span>";
 		document.getElementById("tempMax").innerHTML = Math.round(data.main.temp_max) + " <span>°C Max</span>";
 		document.getElementById("humidity").innerHTML = data.main.humidity + " <span>%</span>";
@@ -71,6 +73,9 @@ $(document).ready(function () {
 			url: "https://free.currconv.com/api/v7/convert?apiKey=df9f138a5090a29e4eaf&q=" + from + "_" + to + "&compact=y",
 			success: function (response) {
 				renderCurrencies(response);
+			},
+			error: function (jqXHR, textStatus, errorThrown) {
+				console.log("Kole Poluchi li?");
 			},
 		});
 	}

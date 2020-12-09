@@ -19,6 +19,56 @@ body {
   top: 90px;
 }
 
-.results .country-box .countri-name {
+.results {
+  display: none;
+}
+
+.results .countri-name {
+  font-size: 2.5rem;
   font-weight: 600;
+}
+
+.results .countri-capital {
+  font-size: 2.25rem;
+  font-weight: 500;
+}
+
+.results .countri-capital span {
+  font-size: 60%;
+}
+
+.results .countri-region {
+  font-size: 2.25rem;
+  font-weight: 500;
+}
+
+.results .countri-region span {
+  font-size: 60%;
+}
+
+.results .country-box label {
+  min-height: 20px;
+}
+
+.results .weather-box .w-main {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.results .weather-box .curent-temp {
+  font-size: 5.25rem;
+  font-weight: 600;
+}
+
+.results .weather-box .curent-temp span {
+  opacity: 0.6;
+  line-height: 1.28;
+  font-size: 1.5rem;
+  margin-left: -46px;
+}
+
+.results .weather-box .w-min,
+.results .weather-box .w-max,
+.results .weather-box .w-humid {
+  padding: 8px 0;
 }

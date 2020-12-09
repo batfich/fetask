@@ -16,9 +16,49 @@ body {
 	}
 }
 .results {
+	display: none;
+	.countri-name {
+		font-size: 2.5rem;
+		font-weight: 600;
+	}
+	.countri-capital {
+		font-size: 2.25rem;
+		font-weight: 500;
+		span {
+			font-size: 60%;
+		}
+	}
+	.countri-region {
+		font-size: 2.25rem;
+		font-weight: 500;
+		span {
+			font-size: 60%;
+		}
+	}
 	.country-box {
-		.countri-name {
+		label {
+			min-height: 20px;
+		}
+	}
+	.weather-box {
+		.w-main {
+			font-size: 1.5rem;
+			font-weight: 500;
+		}
+		.curent-temp {
+			font-size: 5.25rem;
 			font-weight: 600;
+			span {
+				opacity: 0.6;
+				line-height: 1.28;
+				font-size: 1.5rem;
+				margin-left: -46px;
+			}
+		}
+		.w-min,
+		.w-max,
+		.w-humid {
+			padding: 8px 0;
 		}
 	}
 }
